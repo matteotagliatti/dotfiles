@@ -1,13 +1,18 @@
 set number
 set relativenumber
-set mouse=a
-set autoindent
+set mouse=a " Mouse active
+set autoindent " Use indent fro the previous line
+set clipboard=unnamedplus " Enables the clipboard between Vim and other applications
+
+" This insert 2 spaces insted of a tab because spaces are a bit more 'stable'
 set tabstop=2
+set shiftwidth=2
+set expandtab
 
 " Alias
-nnoremap <C-c> :NERDTreeToggle<CR>
+nnoremap <C-c> :NERDTreeFocus<CR>
 
-" PlugIn
+" Plug Vim
 call plug#begin('~/AppData/Local/nvim/plugged')
 
 Plug 'preservim/nerdtree'
@@ -16,6 +21,9 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install --frozen-lockfile --productio
 Plug 'godlygeek/tabular' | Plug 'preservim/vim-markdown' " Markdown
 
 call plug#end()
+
+" NERDTree
+let NERDTreeQuitOnOpen=1
 
 " Markdown
 let g:vim_markdown_folding_disabled = 1 " Disable folding

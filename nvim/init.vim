@@ -21,5 +21,6 @@ call plug#end()
 let g:vim_markdown_folding_disabled = 1 " Disable folding
 
 " Prettier
+" autoformatting files on save without @format or @prettier tags
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0

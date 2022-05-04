@@ -1,7 +1,6 @@
 set number
 set relativenumber
 set mouse=a " Mouse active
-set autoindent " Use indent fro the previous line
 set clipboard=unnamedplus " Enables the clipboard between Vim and other applications
 
 " This insert 2 spaces insted of a tab because spaces are a bit more 'stable'
@@ -23,7 +22,8 @@ Plug 'godlygeek/tabular' | Plug 'preservim/vim-markdown' " Markdown
 call plug#end()
 
 " NERDTree
-let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen=1 " Close NERDTree when a file is open
+let g:NERDTreeShowHidden = 1 " Show hidden files
 
 " Markdown
 let g:vim_markdown_folding_disabled = 1 " Disable folding

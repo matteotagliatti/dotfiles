@@ -3,7 +3,7 @@ clear
 # Prompt
 Import-Module posh-git
 Import-Module oh-my-posh
-Set-PoshPrompt Takuya
+Set-PoshPrompt robbyrussel
 
 # PSReadLine
 Set-PSReadLineOption -PredictionSource History

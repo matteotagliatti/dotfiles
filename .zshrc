@@ -5,4 +5,8 @@ plugins=(git z nvm zsh-autosuggestions zsh-syntax-highlighting fzf)
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
-alias nvim=vim
+alias vim=nvim
+alias j=jrnl
+alias search="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}' | xargs nvim"
+alias ll="exa -l -g --icons --git"
+alias llt="exa -1 --icons --tree --git-ignore"

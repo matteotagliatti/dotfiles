@@ -7,5 +7,5 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 alias ti3php="docker compose exec ti3_php bash"
 alias ti3keycloak="docker compose exec ti3_keycloak bash"
-alias vim=nvim
+alias v=nvim
 alias j=jrnl

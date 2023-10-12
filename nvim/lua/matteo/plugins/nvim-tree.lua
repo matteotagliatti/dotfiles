@@ -10,12 +10,17 @@ return {
         vim.g.loaded_netrw = 1
         vim.g.loaded_netrwPlugin = 1
 
-        nvimtree.setup({})
+        nvimtree.setup({
+            actions = {
+                open_file = {
+                    quit_on_open = true
+                }
+            }
+        })
 
         -- set keymaps
         local keymap = vim.keymap
 
-        -- toggle file explorer
         keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", {
             desc = "Toggle file explorer"
         })

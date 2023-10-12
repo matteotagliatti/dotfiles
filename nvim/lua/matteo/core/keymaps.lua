@@ -9,3 +9,6 @@ local keymap = vim.keymap
 keymap.set("i", "jk", "<ESC>", {
     desc = "Exit insert mode with jk"
 })
+
+-- select all
+keymap.set('n', '<C-a>', 'gg<S-v>G')

@@ -11,4 +11,12 @@ keymap.set("i", "jk", "<ESC>", {
 })
 
 -- select all
-keymap.set('n', '<C-a>', 'gg<S-v>G')
+keymap.set('n', '<leader>a', 'gg<S-v>G')
+
+-- save file with Ctrl + s
+keymap.set('n', '<C-s>', ':w<CR>')
+keymap.set('i', '<C-s>', '<Esc>:w<CR>')
+
+-- quit buffer with Ctrl + q
+keymap.set('n', '<C-q>', ':q<CR>')
+keymap.set('i', '<C-q>', '<Esc>:q<CR>')

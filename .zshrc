@@ -4,8 +4,4 @@ source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh # Source zsh-syntax-h
 plugins=(git z nvm zsh-autosuggestions zsh-syntax-highlighting fzf)
 source $ZSH/oh-my-zsh.sh
 
-# Aliases
-alias ti3php="docker compose exec ti3_php bash"
-alias ti3keycloak="docker compose exec ti3_keycloak bash"
 alias v=nvim
-alias j=jrnl

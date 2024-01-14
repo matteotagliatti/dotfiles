@@ -17,7 +17,6 @@ return {
         'markdown_inline',
         'lua',
         'gitignore',
-        'dockerfile',
       },
       auto_install = true,
       highlight = { enable = true },

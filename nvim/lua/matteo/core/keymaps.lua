@@ -1,22 +1,18 @@
--- set leader key to space
-vim.g.mapleader = " "
-
+vim.g.mapleader = " " -- set leader key to space
 local keymap = vim.keymap
 
--- General Keymaps
+keymap.set("i", "jk", "<ESC>") -- exit insert mode
+keymap.set('n', '<C-s>', ':w<CR>') -- save file in normal mode
+keymap.set('i', '<C-s>', '<ESC>:w<CR>') -- save file in insert mode
+keymap.set('n', '<C-q>', ':q<CR>') -- quit buffer
+keymap.set('n', '<C-a>', 'gg<S-v>G') -- select all
+keymap.set("n", "<leader>l", "<cmd>Lazy<cr>") -- lazy
 
--- use jk to exit insert mode
-keymap.set("i", "jk", "<ESC>", {
-    desc = "Exit insert mode with jk"
-})
+-- move lines
+keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==")
+keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==")
 
--- select all
-keymap.set('n', '<leader>a', 'gg<S-v>G')
-
--- save file with Ctrl + s
-keymap.set('n', '<C-s>', ':w<CR>')
-keymap.set('i', '<C-s>', '<Esc>:w<CR>')
-
--- quit buffer with Ctrl + q
-keymap.set('n', '<C-q>', ':q<CR>')
-keymap.set('i', '<C-q>', '<Esc>:q<CR>')
+-- new tab
+keymap.set('n', '<C-t>', ':tabedit<Return>')
+keymap.set('n', '<tab>', ':tabnext<Return>')
+keymap.set('n', '<s-tab>', ':tabprev<Return>')

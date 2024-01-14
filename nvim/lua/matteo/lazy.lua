@@ -8,6 +8,4 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({{
     import = "matteo.plugins"
-}, {
-    import = "matteo.plugins.lsp"
 }})

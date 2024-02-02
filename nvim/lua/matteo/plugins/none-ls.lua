@@ -1,50 +1,35 @@
 return {
-	"nvimtools/none-ls.nvim",
-	lazy = true,
-	dependencies = {
-    "jay-babu/mason-null-ls.nvim",
-  },
-	config = function()
-		local null_ls = require("null-ls")
-		local mason_null_ls = require("mason-null-ls")
-		
-		mason_null_ls.setup({
-			ensure_installed = {
-				"prettier",
-        "stylua",
-        "eslint_d",
-      },
-    })
-		
-		local augroup = vim.api.nvim_create_augroup("LspFormatting", {}) 
-		local formatting = null_ls.builtins.formatting -- to setup formatters
+  "nvimtools/none-ls.nvim",
+  config = function()
+    local null_ls = require("null-ls")
+    local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+    local formatting = null_ls.builtins.formatting -- to setup formatters
     local diagnostics = null_ls.builtins.diagnostics -- to setup linters
 
-		null_ls.setup({
-			sources = {
-				formatting.stylua,
-				formatting.prettier,
-				formatting.prettier.with({
-					extra_filetypes = { "astro" },
-				}),
-				diagnostics.eslint_d,
-			},
-			
-			-- format on save
-			on_attach = function(client, bufnr)
-				if client.supports_method("textDocument/formatting") then
-					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-					vim.api.nvim_create_autocmd("BufWritePre", {
-						group = augroup,
-						buffer = bufnr,
-						callback = function()
-							vim.lsp.buf.format({ async = false })
-						end,
-					})
-				end
-			end,
-		})
+    null_ls.setup({
+      sources = {
+        formatting.stylua,
+        formatting.prettier,
+        formatting.prettier.with({
+          extra_filetypes = { "astro" },
+        }),
+        diagnostics.eslint_d,
+      },
+      -- format on save
+      on_attach = function(client, bufnr)
+        if client.supports_method("textDocument/formatting") then
+          vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            group = augroup,
+            buffer = bufnr,
+            callback = function()
+              vim.lsp.buf.format({ async = false })
+            end,
+          })
+        end
+      end,
+    })
 
-		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
-	end,
+    vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+  end,
 }

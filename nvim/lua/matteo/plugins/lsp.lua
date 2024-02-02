@@ -32,15 +32,6 @@ return {
     },
   },
   {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    lazy = false,
-    ensure_installed = {
-      "prettier",
-      "stylua",
-      "eslint_d",
-    },
-  },
-  {
     "neovim/nvim-lspconfig",
     lazy = false,
     config = function()

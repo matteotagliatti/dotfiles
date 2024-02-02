@@ -5,7 +5,6 @@ keymap.set("i", "jk", "<ESC>") -- exit insert mode
 keymap.set("n", "<C-s>", ":w<CR>") -- save file in normal mode
 keymap.set("i", "<C-s>", "<ESC>:w<CR>") -- save file in insert mode
 keymap.set("n", "<C-q>", ":q<CR>") -- quit buffer
-keymap.set("n", "<leader>l", "<cmd>Lazy<cr>") -- lazy
 
 -- move lines
 keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==")

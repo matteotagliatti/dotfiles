@@ -5,3 +5,4 @@ plugins=(git z nvm zsh-autosuggestions zsh-syntax-highlighting fzf)
 source $ZSH/oh-my-zsh.sh
 
 alias v=nvim
+alias t=tmux

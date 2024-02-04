@@ -2,7 +2,7 @@
 
 ## Install
 
-Use [Stow]() to do the symilink.
+Use [Stow](https://www.gnu.org/software/stow/manual/) to do the symilink.
 
 ```bash
 cd

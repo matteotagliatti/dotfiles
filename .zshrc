@@ -6,3 +6,4 @@ source $ZSH/oh-my-zsh.sh
 
 alias v=nvim
 alias t=tmux
+alias g=lazygit

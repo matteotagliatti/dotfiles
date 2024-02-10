@@ -7,3 +7,4 @@ source $ZSH/oh-my-zsh.sh
 alias v=nvim
 alias t=tmux
 alias g=lazygit
+alias s='. ~/Dev/personal/dotfiles/tmux-sessionizer'

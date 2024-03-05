@@ -9,3 +9,28 @@ opt.expandtab = true -- use spaces instead of tabs
 opt.shiftwidth = 2 -- size of an indent
 opt.tabstop = 2 -- number of spaces tabs count for
 opt.smartindent = true -- insert indents automatically
+opt.showmode = false -- don't show the mode, since it's already in status line
+opt.breakindent = true -- enable break indent
+opt.undofile = true -- save undo history
+opt.signcolumn = "yes" -- keep signcolumn on by default
+opt.inccommand = "split" -- preview substitutions live, as you type!
+opt.cursorline = true -- show which line your cursor is on
+opt.scrolloff = 10 -- minimal number of screen lines to keep above and below the cursor.
+
+-- case-insensitive searching UNLESS \C or capital in search
+opt.ignorecase = true
+opt.smartcase = true
+
+-- decrease update time
+opt.updatetime = 250
+opt.timeoutlen = 300
+
+-- configure how new splits should be opened
+opt.splitright = true
+opt.splitbelow = true
+
+-- Sets how neovim will display certain whitespace in the editor.
+--  See `:help 'list'`
+--  and `:help 'listchars'`
+opt.list = true
+opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }

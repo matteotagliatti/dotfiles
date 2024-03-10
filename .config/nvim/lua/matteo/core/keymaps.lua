@@ -16,8 +16,8 @@ keymap.set("n", "<tab>", ":tabnext<Return>", { desc = "Next tab" })
 keymap.set("n", "<s-tab>", ":tabprev<Return>", { desc = "Previous tab" })
 
 -- Diagnostic keymaps
-keymap.set("n", "d[", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
-keymap.set("n", "d]", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
+keymap.set("n", "<leader>dd", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
+keymap.set("n", "<leader>dD", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
 keymap.set("n", "<leader>de", vim.diagnostic.open_float, { desc = "Show [D]iagnostic [E]rror messages" })
 keymap.set("n", "<leader>dq", vim.diagnostic.setloclist, { desc = "Open [D]iagnostic [Q]uickfix list" })
 
@@ -28,4 +28,3 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left wind
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
-

@@ -20,6 +20,7 @@ keymap.set("n", "<leader>ws", ":split<Return>", { desc = "Split window" })
 -- buffers
 keymap.set("n", "<tab>", ":bnext<Return>", { desc = "Go to next buffer" })
 keymap.set("n", "<s-tab>", ":bprev<Return>", { desc = "Go to previous buffer" })
+keymap.set("n", "<leader>q", ":bdelete<Return>", { desc = "Delete buffer" })
 keymap.set("n", "td", ":bdelete<enter>", { desc = "Delete buffer" })
 keymap.set("n", "tk", ":blast<enter>", { desc = "Go to first buffer" })
 keymap.set("n", "tj", ":bfirst<enter>", { desc = "Go to last buffer" })

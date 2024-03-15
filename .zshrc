@@ -8,5 +8,4 @@ source $ZSH/oh-my-zsh.sh
 alias v=nvim
 alias t=tmux
 alias ta='tmux attach'
-alias l=lazygit
-alias s='. ~/Dev/personal/dotfiles/tmux-sessionizer'
+alias g=lazygit

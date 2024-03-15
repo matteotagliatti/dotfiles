@@ -1,7 +1,7 @@
 vim.g.mapleader = " " -- set leader key to space
 local keymap = vim.keymap
 
-keymap.set("i", "jk", "<ESC>", { desc = "jk to escape" })
+keymap.set("i", "jj", "<ESC>", { desc = "jj to escape" })
 keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file in normal mode" })
 keymap.set("i", "<C-s>", "<ESC>:w<CR>", { desc = "save file in insert mode" })
 keymap.set("n", "<C-q>", ":q<CR>", { desc = "Quit file in normal mode" })
@@ -12,8 +12,19 @@ keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move line up" })
 
 -- new tab
 keymap.set("n", "<C-t>", ":tabedit<Return>", { desc = "New tab" })
-keymap.set("n", "<tab>", ":tabnext<Return>", { desc = "Next tab" })
-keymap.set("n", "<s-tab>", ":tabprev<Return>", { desc = "Previous tab" })
+
+-- split window
+keymap.set("n", "<leader>ww", ":vsplit<Return>", { desc = "Vertical split window" })
+keymap.set("n", "<leader>ws", ":split<Return>", { desc = "Split window" })
+
+-- buffers
+keymap.set("n", "<tab>", ":bnext<Return>", { desc = "Go to next buffer" })
+keymap.set("n", "<s-tab>", ":bprev<Return>", { desc = "Go to previous buffer" })
+keymap.set("n", "td", ":bdelete<enter>", { desc = "Delete buffer" })
+keymap.set("n", "tk", ":blast<enter>", { desc = "Go to first buffer" })
+keymap.set("n", "tj", ":bfirst<enter>", { desc = "Go to last buffer" })
+keymap.set("n", "th", ":bprev<enter>", { desc = "Go to previous buffer" })
+keymap.set("n", "tl", ":bnext<enter>", { desc = "Go to next buffer" })
 
 -- Diagnostic keymaps
 keymap.set("n", "<leader>dd", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })

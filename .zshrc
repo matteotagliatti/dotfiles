@@ -5,7 +5,10 @@ source ~/.profile
 plugins=(git z nvm zsh-autosuggestions zsh-syntax-highlighting fzf)
 source $ZSH/oh-my-zsh.sh
 
+bindkey -s ^f "~/Dev/personal/dotfiles/tmux-sessionizer\n" # open tmux sessionizer with ctrl+f
+
 alias v=nvim
 alias t=tmux
 alias ta='tmux attach'
 alias g=lazygit
+

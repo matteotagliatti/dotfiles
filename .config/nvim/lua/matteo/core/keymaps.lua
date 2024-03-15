@@ -4,18 +4,12 @@ local keymap = vim.keymap
 keymap.set("i", "jj", "<ESC>", { desc = "jj to escape" })
 keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file in normal mode" })
 keymap.set("i", "<C-s>", "<ESC>:w<CR>", { desc = "save file in insert mode" })
-keymap.set("n", "<C-q>", ":q<CR>", { desc = "Quit file in normal mode" })
+keymap.set("n", "<C-q>", ":q<CR>", { desc = "Quit in normal mode" })
+keymap.set("n", "<leader>w", ":vsplit<Return>", { desc = "Vertical split window" })
 
 -- move lines vertically
 keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move line down" })
 keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move line up" })
-
--- new tab
-keymap.set("n", "<C-t>", ":tabedit<Return>", { desc = "New tab" })
-
--- split window
-keymap.set("n", "<leader>ww", ":vsplit<Return>", { desc = "Vertical split window" })
-keymap.set("n", "<leader>ws", ":split<Return>", { desc = "Split window" })
 
 -- buffers
 keymap.set("n", "<tab>", ":bnext<Return>", { desc = "Go to next buffer" })

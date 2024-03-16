@@ -41,8 +41,16 @@ return {
 			keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
 			keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Find existing buffers" })
 
+			-- Search in current buffer
+			keymap.set("n", "<leader>si", function()
+				builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+					winblend = 10,
+					previewer = false,
+				}))
+			end, { desc = "[S]earch [I]n Current Buffer" })
+
 			-- Shortcut for searching your neovim configuration files
-			vim.keymap.set("n", "<leader>sn", function()
+			keymap.set("n", "<leader>sn", function()
 				builtin.find_files({ cwd = vim.fn.stdpath("config") })
 			end, { desc = "[S]earch [N]eovim files" })
 		end,

@@ -4,9 +4,6 @@ return {
 	dependencies = {
 		{
 			"L3MON4D3/LuaSnip",
-			build = (function()
-				return "make install_jsregexp" -- Build Step is needed for regex support in snippets
-			end)(),
 			dependencies = {
 				-- `friendly-snippets` contains a variety of premade snippets.
 				--    See the README about individual language/framework/plugin snippets:

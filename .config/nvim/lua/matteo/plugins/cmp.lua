@@ -51,6 +51,7 @@ return {
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 
 				["<CR>"] = cmp.mapping.confirm({ select = true }),
+				["<C-e>"] = cmp.mapping.abort(),
 
 				-- Manually trigger a completion from nvim-cmp.
 				--  Generally you don't need this, because nvim-cmp will display

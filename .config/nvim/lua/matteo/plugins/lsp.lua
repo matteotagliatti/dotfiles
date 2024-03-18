@@ -48,21 +48,6 @@ return { -- LSP Configuration & Plugins
 				-- Opens a popup that displays documentation about the word under your cursor
 				--  See `:help K` for why this keymap
 				map("K", vim.lsp.buf.hover, "Hover Documentation")
-
-				-- The following two autocommands are used to highlight references of the word under your cursor when your cursor rests there for a little while.
-				-- When you move your cursor, the highlights will be cleared (the second autocommand).
-				local client = vim.lsp.get_client_by_id(event.data.client_id)
-				if client and client.server_capabilities.documentHighlightProvider then
-					vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-						buffer = event.buf,
-						callback = vim.lsp.buf.document_highlight,
-					})
-
-					vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
-						buffer = event.buf,
-						callback = vim.lsp.buf.clear_references,
-					})
-				end
 			end,
 		})
 

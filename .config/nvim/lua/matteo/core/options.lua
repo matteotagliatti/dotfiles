@@ -1,6 +1,6 @@
 local opt = vim.opt
 
-opt.clipboard = "unnamedplus" -- sync with system clipboard
+opt.clipboard = "unnamed"
 opt.termguicolors = true -- true color support
 opt.number = true -- show absolute line number on cursor line (when relative number is on)
 opt.relativenumber = true -- show relative line numbers

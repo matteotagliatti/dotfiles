@@ -19,8 +19,8 @@ keymap.set("n", "<leader>q", ":bdelete<Return>", { desc = "Delete buffer" })
 -- keymap.set("n", "9", ":blast<enter>", { desc = "Go to first buffer" })
 
 -- Diagnostic keymaps
-keymap.set("n", "<leader>dd", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
-keymap.set("n", "<leader>dD", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
+keymap.set("n", "<leader>dn", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
+keymap.set("n", "<leader>dp", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
 keymap.set("n", "<leader>de", vim.diagnostic.open_float, { desc = "Show [D]iagnostic [E]rror messages" })
 keymap.set("n", "<leader>dq", vim.diagnostic.setloclist, { desc = "Open [D]iagnostic [Q]uickfix list" })
 

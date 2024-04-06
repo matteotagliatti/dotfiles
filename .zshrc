@@ -12,3 +12,10 @@ alias t=tmux
 alias ta='tmux attach'
 alias g=lazygit
 
+
+# bun completions
+[ -s "/home/matteo/.bun/_bun" ] && source "/home/matteo/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

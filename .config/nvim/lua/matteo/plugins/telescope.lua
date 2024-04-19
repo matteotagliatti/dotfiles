@@ -15,7 +15,9 @@ return {
 					mappings = {
 						i = {
 							["<C-p>"] = actions.move_selection_previous, -- move to prev result
+							["<C-k>"] = actions.move_selection_previous, -- move to prev result
 							["<C-n>"] = actions.move_selection_next, -- move to next result
+							["<C-j>"] = actions.move_selection_next, -- move to next result
 						},
 					},
 				},
@@ -31,26 +33,26 @@ return {
 			-- set keymaps
 			local keymap = vim.keymap
 			local builtin = require("telescope.builtin")
-			keymap.set("n", "<leader>ss", builtin.find_files, { desc = "[S]earch Files" })
-			keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-			keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
-			keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
-			keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
-			keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
-			keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Find existing buffers" })
+			keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind Files" })
+			keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = "[F]ind Recent Files" })
+			keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind [H]elp" })
+			keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[F]ind [K]eymaps" })
+			keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind by [G]rep" })
+			keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
+			keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Find Existing Buffers" })
 
 			-- Search in current buffer
-			keymap.set("n", "<leader>si", function()
+			keymap.set("n", "<leader>fi", function()
 				builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 					winblend = 10,
 					previewer = false,
 				}))
-			end, { desc = "[S]earch [I]n Current Buffer" })
+			end, { desc = "[F]ind [I]n Current Buffer" })
 
 			-- Shortcut for searching your neovim configuration files
-			keymap.set("n", "<leader>sn", function()
+			keymap.set("n", "<leader>fn", function()
 				builtin.find_files({ cwd = vim.fn.stdpath("config") })
-			end, { desc = "[S]earch [N]eovim files" })
+			end, { desc = "[F]ind [N]eovim files" })
 		end,
 	},
 }

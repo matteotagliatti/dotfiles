@@ -6,6 +6,7 @@ keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file in normal mode" })
 keymap.set("i", "<C-s>", "<ESC>:w<CR>", { desc = "save file in insert mode" })
 keymap.set("n", "<C-q>", ":q<CR>", { desc = "Quit in normal mode" })
 keymap.set("n", "<leader>w", ":vsplit<Return>", { desc = "Vertical split window" })
+keymap.set({ "n", "v" }, "<leader>y", [["+y]]) -- Copy to system clipboard
 
 -- move lines vertically
 keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move line down" })

@@ -26,10 +26,7 @@ return {
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
-		local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 		luasnip.config.setup({})
-
-		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done()) -- select the first item in the completion list without scrolling down
 
 		cmp.setup({
 			snippet = {

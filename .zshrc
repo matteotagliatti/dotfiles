@@ -16,4 +16,3 @@ alias today='date +%Y-%m-%d'
 alias vt='nvim $(today).md'
 alias yesterday='date -d "yesterday 13:00" +%Y-%m-%d'
 alias vy='nvim $(yesterday).md'
-

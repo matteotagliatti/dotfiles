@@ -5,7 +5,6 @@ plugins=(z nvm zsh-autosuggestions zsh-syntax-highlighting fzf zsh-completions)
 source $ZSH/oh-my-zsh.sh
 
 bindkey -s ^f "~/Dev/personal/dotfiles/tmux-sessionizer\n" # open tmux sessionizer with ctrl+f
-bindkey -s ^D "nvim ~/Dev/todo.md"
 
 alias v=nvim
 alias t=tmux

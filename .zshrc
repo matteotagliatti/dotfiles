@@ -5,7 +5,7 @@ plugins=(fzf fzf-tab nvm z zsh-autosuggestions zsh-syntax-highlighting)
 fpath+="${ZSH_CUSTOM:-"$ZSH/custom"}/plugins/zsh-completions/src" # As docs suggested
 source $ZSH/oh-my-zsh.sh
 
-bindkey -s ^f "~/Dev/personal/dotfiles/tmux-sessionizer\n" # open tmux sessionizer with ctrl+f
+bindkey -s ^f "~/.config/tmux/tmux-sessionizer\n" # open tmux sessionizer with ctrl+f
 
 alias v=nvim
 alias t=tmux

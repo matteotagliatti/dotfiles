@@ -11,12 +11,6 @@ alias t=tmux
 alias ta='tmux attach'
 alias g=lazygit
 
-alias today='date +%Y-%m-%d'
-alias vt='nvim $(today).md'
-alias yesterday='date -d "yesterday 13:00" +%Y-%m-%d'
-alias vy='nvim $(yesterday).md'
-
-
 # Bun
 [ -s "/home/matteo/.bun/_bun" ] && source "/home/matteo/.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"

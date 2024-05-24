@@ -1,4 +1,4 @@
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh" # path to oh-my-zsh
 ZSH_THEME="robbyrussell"
 source ~/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh # Source zsh-syntax-highlighting theme
 plugins=(fzf fzf-tab nvm z zsh-autosuggestions zsh-syntax-highlighting)
@@ -7,11 +7,15 @@ source $ZSH/oh-my-zsh.sh
 
 bindkey -s ^f "~/.config/tmux/tmux-sessionizer\n" # open tmux sessionizer with ctrl+f
 
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case-insensitive completion
+
 alias v=nvim
 alias t=tmux
 alias ta='tmux attach'
 alias g=lazygit
 alias c=clear
+alias e=exit
+alias ..='cd ..'
 
 # Bun
 [ -s "/home/matteo/.bun/_bun" ] && source "/home/matteo/.bun/_bun"

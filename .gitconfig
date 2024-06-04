@@ -1,0 +1,8 @@
+[includeIf "gitdir:~/Dev/personal/"]
+  path = ~/Dev/personal/dotfiles/.config/git/.gitconfig_personal
+[includeIf "gitdir:~/Dev/work/"]
+  path = ~/Dev/personal/dotfiles/.config/git/.gitconfig_work
+
+[credential]
+	helper = store
+

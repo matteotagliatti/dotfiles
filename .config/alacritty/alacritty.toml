@@ -13,5 +13,5 @@ decorations = "Buttonless"
 startup_mode = "Maximized"
 
 [font]
-normal.family = "GeistMono Nerd Font Mono"
+normal.family = "Hack Nerd Font Mono"
 size = 12

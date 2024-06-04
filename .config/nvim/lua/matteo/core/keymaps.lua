@@ -45,12 +45,12 @@ keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window"
 -- inside ./daily directory
 keymap.set("n", "<leader>nt", function()
 	local date = os.date("%Y-%m-%d")
-	local filename = string.format("%s/%s.md", vim.fn.expand("./daily"), date)
+	local filename = string.format("%s/%s.md", vim.fn.expand("daily"), date)
 	vim.cmd("e " .. filename)
 end, { desc = "Create a new daily note" })
 
 keymap.set("n", "<leader>ny", function()
 	local date = os.date("%Y-%m-%d", os.time() - 86400)
-	local filename = string.format("%s/%s.md", vim.fn.expand("./daily"), date)
+	local filename = string.format("%s/%s.md", vim.fn.expand("daily"), date)
 	vim.cmd("e " .. filename)
 end, { desc = "Create a new daily note for yesterday" })

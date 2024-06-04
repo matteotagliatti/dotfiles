@@ -4,5 +4,5 @@
   path = ~/Dev/personal/dotfiles/.config/git/.gitconfig_work
 
 [credential]
-	helper = store
+  helper = store
 

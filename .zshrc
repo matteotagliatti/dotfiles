@@ -16,7 +16,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case-insensitive comple
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # colorize completion list
 zstyle ':completion:*' menu no # no menu selection
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' # preview directory content
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath' # preview directory content
 
 source ~/.config/zsh/personal-alias.zsh
 source ~/.config/zsh/work-alias.zsh

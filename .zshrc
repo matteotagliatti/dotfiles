@@ -1,16 +1,31 @@
-export ZSH="$HOME/.oh-my-zsh" # path to oh-my-zsh
-ZSH_THEME="robbyrussell"
-source ~/.config/zsh/catppuccin-mocha-zsh-syntax-highlighting.zsh # Source zsh-syntax-highlighting theme
-plugins=(fzf fzf-tab nvm z zsh-autosuggestions zsh-syntax-highlighting)
-fpath+="${ZSH_CUSTOM:-"$ZSH/custom"}/plugins/zsh-completions/src" # As docs suggested
-source $ZSH/oh-my-zsh.sh
+source ~/.config/zsh/zinit.zsh
 
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
+
+source ~/.config/zsh/history.zsh
+source ~/.config/zsh/catppuccin-mocha-zsh-syntax-highlighting.zsh
+
+bindkey '^p' history-search-backward # Ctrl-p to search backward
+bindkey '^n' history-search-forward # Ctrl-n to search forward
 bindkey -s ^f "~/.config/tmux/tmux-sessionizer\n" # open tmux sessionizer with ctrl+f
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case-insensitive completion
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # colorize completion list
+zstyle ':completion:*' menu no # no menu selection
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' # preview directory content
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath' # preview directory content
 
-source ~/.config/zsh/personal-alias.zsh 
-source ~/.config/zsh/work-alias.zsh 
+source ~/.config/zsh/personal-alias.zsh
+source ~/.config/zsh/work-alias.zsh
+
+source ~/.fzf.zsh
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
+
+###
 
 # Bun
 [ -s "/home/matteo/.bun/_bun" ] && source "/home/matteo/.bun/_bun"

@@ -12,7 +12,6 @@ command_timeout=1000
 
 [directory]
 truncation_symbol = "…/"
-style="bold blue"
 
 [git_branch]
 symbol = ""
@@ -23,6 +22,10 @@ format = "[($all_status)]($style) "
 
 [cmd_duration]
 format="[$duration]($style)"
+
+[character]
+success_symbol = '[➜](bold green)'
+error_symbol = '[➜](bold green)'
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"

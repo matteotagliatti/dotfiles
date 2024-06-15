@@ -5,6 +5,7 @@ alias g=lazygit
 alias c=clear
 alias e=exit
 alias ls='ls --color'
+alias ll='ls -l --color=auto'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'

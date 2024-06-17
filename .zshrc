@@ -1,12 +1,24 @@
 source ~/.config/zsh/zinit.zsh
+source ~/.config/zsh/catppuccin-mocha-zsh-syntax-highlighting.zsh
 
+# plugins
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
-source ~/.config/zsh/history.zsh
-source ~/.config/zsh/catppuccin-mocha-zsh-syntax-highlighting.zsh
+# history
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase # erase duplicates in history
+setopt appendhistory # append history to the history file rather than overwriting it
+setopt sharehistory # share history between all sessions
+setopt hist_ignore_space # ignore commands that start with a space
+setopt hist_ignore_all_dups # ignore all duplicates in history
+setopt hist_save_no_dups # do not save duplicates in history
+setopt hist_ignore_dups # ignore duplicates in history
+setopt hist_find_no_dups # do not display duplicates in history
 
 bindkey '^p' history-search-backward # Ctrl-p to search backward
 bindkey '^n' history-search-forward # Ctrl-n to search forward
@@ -17,8 +29,23 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # colorize completion li
 zstyle ':completion:*' menu no # no menu selection
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' # preview directory content
 
-source ~/.config/zsh/personal-alias.zsh
-source ~/.config/zsh/work-alias.zsh
+# aliases
+alias v=nvim
+alias t=tmux
+alias ta='tmux attach'
+alias g=lazygit
+alias c=clear
+alias e=exit
+alias ls='ls --color'
+alias ll='ls -l --color'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# work aliases
+alias dr="sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0 && systemctl --user restart docker-desktop"
+alias gl="gulp 'launch services'"
+alias gi="gulp 'install services'"
 
 source ~/.fzf.zsh
 eval "$(zoxide init zsh)"
@@ -33,6 +60,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 export PATH=$PATH:/usr/local/go/bin # Go
 
+# NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"

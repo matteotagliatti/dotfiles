@@ -6,9 +6,11 @@ keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file in normal mode" })
 keymap.set("i", "<C-s>", "<ESC>:w<CR>", { desc = "save file in insert mode" })
 keymap.set("n", "<C-q>", ":q<CR>", { desc = "Quit in normal mode" })
 keymap.set("n", "<leader>w", ":vsplit<Return>", { desc = "Vertical split window" })
-keymap.set({ "n", "v" }, "<leader>y", [["+y]]) -- Copy to system clipboard
+keymap.set("n", "<Esc>", ":nohlsearch<CR>", { desc = "Remove search highlight" })
 
--- move lines vertically
+keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
+keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste from system clipboard" })
+
 keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move line down" })
 keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move line up" })
 

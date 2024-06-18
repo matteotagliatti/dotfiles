@@ -1,4 +1,9 @@
-source ~/.config/zsh/zinit.zsh
+# zinit init
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
+
 source ~/.config/zsh/catppuccin-mocha-zsh-syntax-highlighting.zsh
 
 # plugins
@@ -28,6 +33,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case-insensitive comple
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # colorize completion list
 zstyle ':completion:*' menu no # no menu selection
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' # preview directory content
+
+autoload -U compinit && compinit
 
 # aliases
 alias v=nvim

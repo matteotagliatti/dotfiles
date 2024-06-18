@@ -50,10 +50,6 @@
       "type": "prompt"
     }
   ],
-  "transient_prompt": {
-    "background": "transparent",
-    "template": "\uf105 "
-  },
   "final_space": true,
   "version": 2
 }

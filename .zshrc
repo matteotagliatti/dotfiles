@@ -1,3 +1,5 @@
+# zmodload zsh/zprof
+
 # zinit init
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
@@ -34,8 +36,6 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # colorize completion li
 zstyle ':completion:*' menu no # no menu selection
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' # preview directory content
 
-autoload -U compinit && compinit
-
 # aliases
 alias v=nvim
 alias t=tmux
@@ -67,7 +67,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 export PATH=$PATH:/usr/local/go/bin # Go
 
-# NVM
+# NVM 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# zprof

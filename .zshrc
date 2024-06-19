@@ -67,9 +67,11 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 export PATH=$PATH:/usr/local/go/bin # Go
 
-# NVM 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# fnm
+FNM_PATH="/home/matteo/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/matteo/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
 
 # zprof

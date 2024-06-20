@@ -43,8 +43,7 @@ keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window"
 keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
--- Daily Notes
--- inside ./daily directory
+-- Daily Notes inside ./daily directory
 keymap.set("n", "<leader>nt", function()
 	local date = os.date("%Y-%m-%d")
 	local filename = string.format("%s/%s.md", vim.fn.expand("daily"), date)

@@ -11,9 +11,6 @@ keymap.set("n", "<Esc>", ":nohlsearch<CR>", { desc = "Remove search highlight" }
 keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
 keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste from system clipboard" })
 
-keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move line down" })
-keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move line up" })
-
 -- buffers
 keymap.set("n", "<tab>", ":bnext<Return>", { desc = "Go to next buffer" })
 keymap.set("n", "<s-tab>", ":bprev<Return>", { desc = "Go to previous buffer" })

@@ -13,5 +13,6 @@ decorations = "Buttonless"
 startup_mode = "Maximized"
 
 [font]
-normal.family = "Hack Nerd Font Mono"
+normal.family = "Berkeley Mono Variable"
+bold.family = "Berkeley Mono Variable"
 size = 12

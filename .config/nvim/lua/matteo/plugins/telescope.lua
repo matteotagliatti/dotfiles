@@ -15,7 +15,6 @@ return {
 				pickers = {
 					find_files = {
 						find_command = { "rg", "--files", "--hidden", "-g", "!.git" }, -- show dotfiles respecting .gitignore
-						theme = "dropdown",
 					},
 				},
 				defaults = {

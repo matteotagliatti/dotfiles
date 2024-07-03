@@ -2,23 +2,30 @@ return {
 	"folke/trouble.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
+		local t = require("trouble")
+
 		vim.keymap.set("n", "<leader>tt", function()
-			require("trouble").toggle()
-		end)
+			t.toggle()
+		end, { desc = "Toggle Troubel" })
+
 		vim.keymap.set("n", "<leader>tw", function()
-			require("trouble").toggle("workspace_diagnostics")
-		end)
+			t.toggle("workspace_diagnostics")
+		end, { desc = "[Toggle Workspace Diagnostics]" })
+
 		vim.keymap.set("n", "<leader>td", function()
-			require("trouble").toggle("document_diagnostics")
-		end)
+			t.toggle("document_diagnostics")
+		end, { desc = "Toggle Document Diagnostics" })
+
 		vim.keymap.set("n", "<leader>tq", function()
-			require("trouble").toggle("quickfix")
-		end)
+			t.toggle("quickfix")
+		end, { desc = "Toggle Quickfix" })
+
 		vim.keymap.set("n", "<leader>tl", function()
-			require("trouble").toggle("loclist")
-		end)
+			t.toggle("loclist")
+		end, { desc = "Toggle Location List" })
+
 		vim.keymap.set("n", "gr", function()
-			require("trouble").toggle("lsp_references")
-		end)
+			t.toggle("lsp_references")
+		end, { desc = "Trouble LSP References" })
 	end,
 }

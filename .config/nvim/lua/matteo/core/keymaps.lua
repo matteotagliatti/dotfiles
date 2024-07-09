@@ -1,15 +1,15 @@
 vim.g.mapleader = " " -- set leader key to space
 local keymap = vim.keymap
 
-keymap.set("i", "jj", "<ESC>", { desc = "jj to escape" })
-keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file in normal mode" })
-keymap.set("i", "<C-s>", "<ESC>:w<CR>", { desc = "save file in insert mode" })
+keymap.set("i", "jj", "<ESC>", { desc = "Escape" })
+keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save" })
+keymap.set("i", "<C-s>", "<ESC>:w<CR>", { desc = "Save in insert mode" })
 keymap.set("n", "<C-q>", ":q<CR>", { desc = "Quit in normal mode" })
-keymap.set("n", "<leader>w", ":vsplit<Return>", { desc = "Vertical split window" })
 keymap.set("n", "<Esc>", ":nohlsearch<CR>", { desc = "Remove search highlight" })
+keymap.set("n", "<leader>w", ":vsplit<Return>", { desc = "Vertical split window" })
 
-keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
-keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste from system clipboard" })
+keymap.set("v", "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
+keymap.set("n", "<leader>p", [["+p]], { desc = "Paste from system clipboard" })
 
 -- buffers
 keymap.set("n", "<tab>", ":bnext<Return>", { desc = "Go to next buffer" })
@@ -27,9 +27,9 @@ keymap.set("n", "<leader>qa", function() -- Close all buffers except the current
 end, { desc = "Close all buffers except the current one" })
 
 -- Diagnostic keymaps
-keymap.set("n", "<leader>dn", vim.diagnostic.goto_prev, { desc = "[D]iagnostic [P]revious message" })
-keymap.set("n", "<leader>dp", vim.diagnostic.goto_next, { desc = "[D]iagnostic [N]ext message" })
-keymap.set("n", "<leader>de", vim.diagnostic.open_float, { desc = "[D]iagnostic [E]rror messages" })
+keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, { desc = "[D]iagnostic [P]revious message" })
+keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, { desc = "[D]iagnostic [N]ext message" })
+keymap.set("n", "<leader>de", vim.diagnostic.open_float, { desc = "[D]iagnostic [E]rror message" })
 keymap.set("n", "<leader>dq", vim.diagnostic.setloclist, { desc = "[D]iagnostic [Q]uickfix list" })
 
 -- Keybinds to make split navigation easier.
@@ -52,3 +52,5 @@ keymap.set("n", "<leader>ny", function()
 	local filename = string.format("%s/%s.md", vim.fn.expand("daily"), date)
 	vim.cmd("e " .. filename)
 end, { desc = "Create a new daily note for yesterday" })
+
+-- comment a selected line in visual mode

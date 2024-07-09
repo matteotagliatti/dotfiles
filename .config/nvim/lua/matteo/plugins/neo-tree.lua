@@ -7,7 +7,7 @@ return {
 		"MunifTanjim/nui.nvim",
 	},
 	config = function()
-		vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal float<CR>", {})
+		vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal float<CR>", { desc = "Toggle neotree" })
 
 		local neotree = require("neo-tree")
 

@@ -60,12 +60,12 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/catpuccin.json)"
 
 ###
 
+# export PATH="$HOME/.local/bin:$PATH" # Add user bin directory to PATH
+
 # Bun
 [ -s "/home/matteo/.bun/_bun" ] && source "/home/matteo/.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-export PATH=$PATH:/usr/local/go/bin # Go
 
 # fnm
 FNM_PATH="/home/matteo/.local/share/fnm"

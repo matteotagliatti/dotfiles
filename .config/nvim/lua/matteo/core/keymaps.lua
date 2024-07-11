@@ -14,9 +14,10 @@ keymap.set("n", "<leader>p", [["+p]], { desc = "Paste from system clipboard" })
 -- buffers
 keymap.set("n", "<tab>", ":bnext<Return>", { desc = "Go to next buffer" })
 keymap.set("n", "<s-tab>", ":bprev<Return>", { desc = "Go to previous buffer" })
+keymap.set("n", "<leader>1", ":bfirst<Return>", { desc = "Go to first buffer" })
+keymap.set("n", "<leader>0", ":blast<Return>", { desc = "Go to last buffer" })
+keymap.set("n", "<leader><tab>", "<C-^>", { desc = "Go to the previously opened buffer" })
 keymap.set("n", "<leader>qq", ":bdelete<Return>", { desc = "Delete buffer" })
--- keymap.set("n", "8", ":bfirst<enter>", { desc = "Go to last buffer" })
--- keymap.set("n", "9", ":blast<enter>", { desc = "Go to first buffer" })
 keymap.set("n", "<leader>qa", function() -- Close all buffers except the current one
 	local current_bufnr = vim.fn.bufnr("%")
 	for _, bufnr in ipairs(vim.fn.getbufinfo({ buflisted = 1 })) do
@@ -52,5 +53,3 @@ keymap.set("n", "<leader>ny", function()
 	local filename = string.format("%s/%s.md", vim.fn.expand("daily"), date)
 	vim.cmd("e " .. filename)
 end, { desc = "Create a new daily note for yesterday" })
-
--- comment a selected line in visual mode

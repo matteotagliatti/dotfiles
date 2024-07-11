@@ -16,7 +16,6 @@ return { -- LSP Configuration & Plugins
 				-- Jump to the definition of the word under your cursor.
 				--  To jump back, press <C-t>.
 				map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-				-- map(<leader>gd", vim.lsp.buf.definition, "[Go] [D]efinition")") -- without telescope
 
 				-- Find references for the word under your cursor.
 				map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")

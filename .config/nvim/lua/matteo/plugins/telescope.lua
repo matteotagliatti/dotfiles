@@ -9,7 +9,6 @@ return {
 		config = function()
 			local telescope = require("telescope")
 			local actions = require("telescope.actions")
-			local trouble = require("trouble.providers.telescope")
 
 			telescope.setup({
 				pickers = {
@@ -24,10 +23,6 @@ return {
 							["<C-k>"] = actions.move_selection_previous, -- move to prev result
 							["<C-n>"] = actions.move_selection_next, -- move to next result
 							["<C-j>"] = actions.move_selection_next, -- move to next result
-							["<C-t>"] = trouble.open_with_trouble, -- open trouble
-						},
-						n = {
-							["<C-t>"] = trouble.open_with_trouble, -- open trouble
 						},
 					},
 				},

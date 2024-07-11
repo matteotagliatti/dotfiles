@@ -60,7 +60,7 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/catpuccin.json)"
 
 ###
 
-# export PATH="$HOME/.local/bin:$PATH" # Add user bin directory to PATH
+export PATH="$HOME/.local/bin:$PATH" # Add user bin directory to PATH
 
 # Bun
 [ -s "/home/matteo/.bun/_bun" ] && source "/home/matteo/.bun/_bun"

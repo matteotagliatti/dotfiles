@@ -14,8 +14,6 @@ keymap.set("n", "<leader>p", [["+p]], { desc = "Paste from system clipboard" })
 -- buffers
 keymap.set("n", "<tab>", ":bnext<Return>", { desc = "Go to next buffer" })
 keymap.set("n", "<s-tab>", ":bprev<Return>", { desc = "Go to previous buffer" })
-keymap.set("n", "<leader>1", ":bfirst<Return>", { desc = "Go to first buffer" })
-keymap.set("n", "<leader>0", ":blast<Return>", { desc = "Go to last buffer" })
 keymap.set("n", "<leader><tab>", "<C-^>", { desc = "Go to the previously opened buffer" })
 keymap.set("n", "<leader>qq", ":bdelete<Return>", { desc = "Delete buffer" })
 keymap.set("n", "<leader>qa", function() -- Close all buffers except the current one
@@ -40,16 +38,3 @@ keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" 
 keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
-
--- Daily Notes inside ./daily directory
-keymap.set("n", "<leader>nt", function()
-	local date = os.date("%Y-%m-%d")
-	local filename = string.format("%s/%s.md", vim.fn.expand("daily"), date)
-	vim.cmd("e " .. filename)
-end, { desc = "Create a new daily note" })
-
-keymap.set("n", "<leader>ny", function()
-	local date = os.date("%Y-%m-%d", os.time() - 86400)
-	local filename = string.format("%s/%s.md", vim.fn.expand("daily"), date)
-	vim.cmd("e " .. filename)
-end, { desc = "Create a new daily note for yesterday" })

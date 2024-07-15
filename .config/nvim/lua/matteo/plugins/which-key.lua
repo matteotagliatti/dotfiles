@@ -7,15 +7,19 @@ return {
 	end,
 	config = function()
 		local wk = require("which-key")
-		wk.setup()
+		wk.setup({
+			icons = {
+				rules = false,
+			},
+		})
 
-		wk.register({
-			["<leader>d"] = { name = "[D]iagnostics", _ = "which_key_ignore" },
-			["<leader>f"] = { name = "[F]ind", _ = "which_key_ignore" },
-			["<leader>fs"] = { name = "[F]ind [S]ymbols", _ = "which_key_ignore" },
-			["<leader>g"] = { name = "[G]it", _ = "which_key_ignore" },
-			["<leader>t"] = { name = "[T]rouble", _ = "which_key_ignore" },
-			["<leader>q"] = { name = "[Q]uit", _ = "which_key_ignore" },
+		wk.add({
+			{ "<leader>d", group = "[D]iagnostics" },
+			{ "<leader>f", group = "[F]ind" },
+			{ "<leader>fs", group = "[F]ind [S]ymbols" },
+			{ "<leader>g", group = "[G]it" },
+			{ "<leader>t", group = "[T]rouble" },
+			{ "<leader>q", group = "[Q]uit" },
 		})
 	end,
 }

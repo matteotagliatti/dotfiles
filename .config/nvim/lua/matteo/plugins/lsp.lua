@@ -64,7 +64,7 @@ return { -- LSP Configuration & Plugins
 			cssls = {},
 			tailwindcss = {},
 			emmet_ls = {
-				filetypes = { "html", "typescriptreact", "javascriptreact", "css", "astro" },
+				filetypes = { "html", "javascriptreact", "css", "astro" },
 			},
 			astro = {},
 			lua_ls = {

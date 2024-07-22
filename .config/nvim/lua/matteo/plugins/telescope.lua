@@ -43,7 +43,7 @@ return {
 			-- set keymaps
 			local keymap = vim.keymap
 			local builtin = require("telescope.builtin")
-			keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind Files" })
+			keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
 			keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = "[F]ind Recent Files" })
 			keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind [H]elp" })
 			keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[F]ind [K]eymaps" })

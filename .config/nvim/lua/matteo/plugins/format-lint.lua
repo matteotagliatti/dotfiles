@@ -33,6 +33,6 @@ return {
 			end,
 		})
 
-		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "Format buffer" })
+		vim.keymap.set("n", "<leader>fb", vim.lsp.buf.format, { desc = "[F]ormat [B]uffer" })
 	end,
 }

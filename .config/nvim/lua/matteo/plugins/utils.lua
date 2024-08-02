@@ -10,6 +10,10 @@ return {
 		opts = {},
 	},
 	{
+		"windwp/nvim-ts-autotag",
+		opts = {},
+	},
+	{
 		-- "gc" to comment visual regions/lines
 		"numToStr/Comment.nvim",
 		opts = {},

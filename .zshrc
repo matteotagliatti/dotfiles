@@ -8,11 +8,13 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 source ~/.config/zsh/catppuccin-mocha-zsh-syntax-highlighting.zsh
 
+autoload -U compinit; compinit
+
 # plugins
+zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
 
 # history
 HISTSIZE=5000

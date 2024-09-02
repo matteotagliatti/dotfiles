@@ -1,38 +1,82 @@
 return {
-	"nvimtools/none-ls.nvim",
-	dependencies = {
-		"nvimtools/none-ls-extras.nvim",
-	},
-	config = function()
-		local null_ls = require("null-ls")
-		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-		local formatting = null_ls.builtins.formatting -- to setup formatters
-		-- local diagnostics = null_ls.builtins.diagnostics -- to setup linters
-
-		null_ls.setup({
-			sources = {
-				formatting.stylua,
-				formatting.prettier,
-				formatting.prettier.with({
-					extra_filetypes = { "astro" },
-				}),
-				require("none-ls.diagnostics.eslint_d"),
+	{
+		"stevearc/conform.nvim",
+		event = { "BufWritePre" },
+		cmd = { "ConformInfo" },
+		keys = {
+			{
+				"<leader>fb",
+				function()
+					require("conform").format({ async = true, lsp_format = "fallback" })
+				end,
+				mode = "",
+				desc = "[F]ormat [B]uffer",
 			},
-			-- format on save
-			on_attach = function(client, bufnr)
-				if client.supports_method("textDocument/formatting") then
-					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-					vim.api.nvim_create_autocmd("BufWritePre", {
-						group = augroup,
-						buffer = bufnr,
-						callback = function()
-							vim.lsp.buf.format({ async = false })
-						end,
-					})
+		},
+		opts = {
+			notify_on_error = false,
+			format_on_save = function(bufnr)
+				-- Disable "format_on_save lsp_fallback" for languages that don't
+				-- have a well standardized coding style. You can add additional
+				-- languages here or re-enable it for the disabled ones.
+				local disable_filetypes = { c = true, cpp = true }
+				local lsp_format_opt
+				if disable_filetypes[vim.bo[bufnr].filetype] then
+					lsp_format_opt = "never"
+				else
+					lsp_format_opt = "fallback"
 				end
+				return {
+					timeout_ms = 500,
+					lsp_format = lsp_format_opt,
+				}
 			end,
-		})
+			formatters_by_ft = {
+				lua = { "stylua" },
+				-- Conform can also run multiple formatters sequentially
+				-- python = { "isort", "black" },
+				--
+				-- You can use 'stop_after_first' to run the first available formatter from the list
+				javascript = { "prettier" },
+				javascriptreact = { "prettier" },
+				typescript = { "prettier" },
+				typescriptreact = { "prettier" },
+				html = { "prettier" },
+				css = { "prettier" },
+				json = { "prettier" },
+				markdown = { "prettier" },
+			},
+		},
+	},
+	{
+		"mfussenegger/nvim-lint",
+		event = {
+			"BufReadPre",
+			"BufNewFile",
+		},
+		config = function()
+			local lint = require("lint")
 
-		vim.keymap.set("n", "<leader>fb", vim.lsp.buf.format, { desc = "[F]ormat [B]uffer" })
-	end,
+			lint.linters_by_ft = {
+				javascript = { "eslint_d" },
+				typescript = { "eslint_d" },
+				javascriptreact = { "eslint_d" },
+				typescriptreact = { "eslint_d" },
+			}
+
+			local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
+
+			-- When BufEnter, BufWritePost and InserLeave happen `lint.try_lint` is triggered
+			vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+				group = lint_augroup,
+				callback = function()
+					lint.try_lint()
+				end,
+			})
+
+			vim.keymap.set("n", "<leader>fl", function()
+				lint.try_lint()
+			end, { desc = "[F]ormat with [L]inter" })
+		end,
+	},
 }

@@ -1,15 +1,12 @@
 return {
 	{
-		-- Detect tabstop and shiftwidth automatically
-		"tpope/vim-sleuth",
-	},
-	{
 		-- Auto close pairs of characters
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		opts = {},
 	},
 	{
+		-- Use treesitter to close and autorename HTML tags
 		"windwp/nvim-ts-autotag",
 		opts = {},
 	},

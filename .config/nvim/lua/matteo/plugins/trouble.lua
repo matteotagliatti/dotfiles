@@ -5,19 +5,19 @@ return {
 		local t = require("trouble")
 
 		vim.keymap.set("n", "<leader>tt", function()
+			t.toggle("telescope_files")
+		end, { desc = "[T]rouble [T]elescope" })
+
+		vim.keymap.set("n", "<leader>ta", function()
 			t.toggle("telescope")
-		end, { desc = "Trouble telescope" })
+		end, { desc = "[T]rouble Telescope [A]ll" })
 
 		vim.keymap.set("n", "<leader>td", function()
 			t.toggle("diagnostics")
-		end, { desc = "Toggle Document Diagnostics" })
+		end, { desc = "[T]rouble [D]iagnostics" })
 
 		vim.keymap.set("n", "<leader>tq", function()
 			t.toggle("quickfix")
-		end, { desc = "Toggle Quickfix" })
-
-		vim.keymap.set("n", "<leader>tl", function()
-			t.toggle("loclist")
-		end, { desc = "Toggle Location List" })
+		end, { desc = "[T]trouble Quickfix" })
 	end,
 }

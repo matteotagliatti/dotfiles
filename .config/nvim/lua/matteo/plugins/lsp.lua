@@ -64,6 +64,7 @@ return { -- LSP Configuration & Plugins
 			cssls = {},
 			tailwindcss = {},
 			astro = {},
+			marksman = {},
 			lua_ls = {
 				settings = {
 					Lua = {

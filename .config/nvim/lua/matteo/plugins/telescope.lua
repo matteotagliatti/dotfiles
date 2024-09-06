@@ -22,7 +22,7 @@ return {
 						i = {
 							["<C-p>"] = actions.move_selection_previous, -- move to prev result
 							["<C-k>"] = actions.move_selection_previous, -- move to prev result
-							["<C-n>"] = actions.move_selection_next, -- move to next result
+							["<C-n>"] = actions.move_selection_next, -- move to next resul
 							["<C-j>"] = actions.move_selection_next, -- move to next result
 							["<C-t>"] = trouble.open, -- open trouble
 						},
@@ -44,10 +44,9 @@ return {
 			local keymap = vim.keymap
 			local builtin = require("telescope.builtin")
 			keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
-			keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = "[F]ind Recent Files" })
-			keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind [H]elp" })
-			keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[F]ind [K]eymaps" })
 			keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind by [G]rep" })
+			keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = "[F]ind Recent Files" })
+			keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[F]ind [K]eymaps" })
 			keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
 			keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Find Existing Buffers" })
 

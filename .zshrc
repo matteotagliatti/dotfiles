@@ -50,7 +50,7 @@ alias ll='ls -l --color'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-source .config/zsh/work.zsh
+source ~/Dev/personal/dotfiles/.config/zsh/work.zsh
 
 export PATH="$HOME/.local/bin:$PATH" # Add user bin directory to PATH
 

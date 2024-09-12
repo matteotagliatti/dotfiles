@@ -21,9 +21,7 @@ return {
 					mappings = {
 						i = {
 							["<C-p>"] = actions.move_selection_previous, -- move to prev result
-							["<C-k>"] = actions.move_selection_previous, -- move to prev result
 							["<C-n>"] = actions.move_selection_next, -- move to next resul
-							["<C-j>"] = actions.move_selection_next, -- move to next result
 							["<C-t>"] = trouble.open, -- open trouble
 						},
 						n = {
@@ -48,7 +46,7 @@ return {
 			keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = "[F]ind Recent Files" })
 			keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[F]ind [K]eymaps" })
 			keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
-			keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Find Existing Buffers" })
+			keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[F]ind Existing Buffers" })
 
 			-- Search in current buffer
 			keymap.set("n", "<leader>fi", function()

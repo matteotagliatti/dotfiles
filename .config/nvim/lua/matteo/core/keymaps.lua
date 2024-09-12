@@ -16,7 +16,8 @@ keymap.set("n", "<tab>", ":bnext<Return>", { desc = "Go to next buffer" })
 keymap.set("n", "<s-tab>", ":bprev<Return>", { desc = "Go to previous buffer" })
 keymap.set("n", "<leader><tab>", "<C-^>", { desc = "Go to the previously opened buffer" })
 keymap.set("n", "<leader>qq", ":bdelete<Return>", { desc = "Delete buffer" })
-keymap.set("n", "<leader>qa", function() -- Close all buffers except the current one
+keymap.set("n", "<leader>q!", ":bdelete!<Return>", { desc = "Delete buffer without saving" })
+keymap.set("n", "<leader>qa", function()
 	local current_bufnr = vim.fn.bufnr("%")
 	for _, bufnr in ipairs(vim.fn.getbufinfo({ buflisted = 1 })) do
 		if bufnr.bufnr ~= current_bufnr then

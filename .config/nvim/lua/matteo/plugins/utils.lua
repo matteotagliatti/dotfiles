@@ -20,4 +20,9 @@ return {
 		"rmagatti/auto-session",
 		opts = {},
 	},
+	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = {},
+	},
 }

@@ -60,17 +60,24 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/catpuccin.json)"
 
 ###
 
-# Bun
-[ -s "/home/matteo/.bun/_bun" ] && source "/home/matteo/.bun/_bun"
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
 # fnm
 FNM_PATH="/home/matteo/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="/home/matteo/.local/share/fnm:$PATH"
   eval "`fnm env`"
 fi
+
+# pnpm
+export PNPM_HOME="/home/matteo/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# Bun
+[ -s "/home/matteo/.bun/_bun" ] && source "/home/matteo/.bun/_bun"
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 # cargo
 CARGO_PATH="$HOME/.cargo"

@@ -39,6 +39,7 @@ return {
 			javascriptreact = { "prettier" },
 			typescript = { "prettier" },
 			typescriptreact = { "prettier" },
+			astro = { "prettier" },
 			html = { "prettier" },
 			css = { "prettier" },
 			json = { "prettier" },

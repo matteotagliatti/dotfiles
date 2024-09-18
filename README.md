@@ -2,7 +2,7 @@
 
 ## Install
 
-Use [Stow](https://www.gnu.org/software/stow/manual/) to do the symilink.
+Use [Stow](https://www.gnu.org/software/stow/manual/) to do the symlink.
 
 ```bash
 sudo apt install stow

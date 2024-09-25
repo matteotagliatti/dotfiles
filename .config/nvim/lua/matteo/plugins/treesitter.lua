@@ -29,7 +29,7 @@ return {
 				keymaps = {
 					init_selection = "<C-Space>",
 					node_incremental = "<C-Space>",
-					scope_incremental = "<C-s>",
+					scope_incremental = "<C-n>",
 					node_decremental = "<C-l>",
 				},
 			},

@@ -25,4 +25,5 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = {},
 	},
+	{ "echasnovski/mini.ai", version = "*" },
 }

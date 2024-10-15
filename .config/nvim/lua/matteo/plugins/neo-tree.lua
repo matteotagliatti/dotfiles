@@ -7,12 +7,17 @@ return {
 		"MunifTanjim/nui.nvim",
 	},
 	config = function()
-		vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal float<CR>", { desc = "Toggle neotree" })
+		vim.keymap.set("n", "\\", ":Neotree filesystem reveal float<CR>", { desc = "Toggle neotree" })
 
 		local neotree = require("neo-tree")
 
 		neotree.setup({
 			filesystem = {
+				window = {
+					mappings = {
+						["\\"] = "close_window",
+					},
+				},
 				filtered_items = {
 					visible = true,
 					hide_dotfiles = false,

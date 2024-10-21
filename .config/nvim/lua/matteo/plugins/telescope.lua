@@ -46,7 +46,6 @@ return {
 			keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = "[F]ind Recent Files" })
 			keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[F]ind [K]eymaps" })
 			keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
-			keymap.set("n", "<leader>fc", ":TodoTelescope<CR>", { desc = "[F]ind [C]omments" })
 			keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[F]ind Existing Buffers" })
 
 			-- Search in current buffer

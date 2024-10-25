@@ -55,11 +55,6 @@ return {
 					previewer = false,
 				}))
 			end, { desc = "[F]ind [I]n Current Buffer" })
-
-			-- Shortcut for searching your neovim configuration files
-			keymap.set("n", "<leader>fn", function()
-				builtin.find_files({ cwd = vim.fn.stdpath("config") })
-			end, { desc = "[F]ind [N]eovim files" })
 		end,
 	},
 }

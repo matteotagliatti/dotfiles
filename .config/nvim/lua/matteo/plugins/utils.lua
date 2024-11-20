@@ -20,4 +20,5 @@ return {
 		"rmagatti/auto-session",
 		opts = {},
 	},
+	{ "echasnovski/mini.surround", version = false, opts = {} },
 }

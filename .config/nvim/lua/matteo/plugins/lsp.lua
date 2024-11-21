@@ -58,8 +58,24 @@ return { -- LSP Configuration & Plugins
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
+		local function typescript_organize_imports()
+			local params = {
+				command = "_typescript.organizeImports",
+				arguments = { vim.api.nvim_buf_get_name(0) },
+				title = "",
+			}
+			vim.lsp.buf.execute_command(params)
+		end
+
 		local servers = {
-			tsserver = {},
+			tsserver = {
+				commands = {
+					OrganizeImports = {
+						typescript_organize_imports,
+						description = "TypeScript Organize Imports",
+					},
+				},
+			},
 			html = {},
 			cssls = {},
 			tailwindcss = {},

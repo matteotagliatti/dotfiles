@@ -2,3 +2,4 @@ theme = catppuccin-mocha
 font-family = Berkeley Mono Variable
 mouse-hide-while-typing = true
 mouse-scroll-multiplier = 0.5
+font-feature = -calt

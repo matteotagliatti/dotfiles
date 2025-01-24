@@ -31,6 +31,8 @@ setopt hist_find_no_dups # do not display duplicates in history
 
 bindkey '^p' history-search-backward # Ctrl-p to search backward
 bindkey '^n' history-search-forward # Ctrl-n to search forward
+bindkey '^[[1;5D' backward-word # Ctrl + Arrow Left go back one word
+bindkey '^[[1;5C' forward-word # Ctrl + Arrow Right go forward one word
 bindkey -s ^f "~/.config/tmux/tmux-sessionizer\n" # open tmux sessionizer with ctrl+f
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case-insensitive completion

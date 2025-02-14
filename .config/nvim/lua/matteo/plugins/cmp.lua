@@ -21,7 +21,7 @@ return {
 		-- Adds other completion capabilities.
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-path",
-		"github/copilot.vim",
+		-- "github/copilot.vim",
 	},
 	config = function()
 		local cmp = require("cmp")

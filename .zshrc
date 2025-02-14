@@ -45,6 +45,7 @@ alias v=nvim
 alias t=tmux
 alias ta='tmux attach'
 alias g=lazygit
+alias d=lazydocker
 alias e=exit
 alias ls='ls --color'
 alias ll='ls -l --color'

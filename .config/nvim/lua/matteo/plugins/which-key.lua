@@ -20,6 +20,7 @@ return {
 			{ "<leader>g", group = "[G]it" },
 			{ "<leader>t", group = "[T]rouble" },
 			{ "<leader>q", group = "[Q]uit" },
+			{ "<leader>n", group = "[N]otes" },
 		})
 	end,
 }

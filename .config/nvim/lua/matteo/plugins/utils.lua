@@ -23,8 +23,8 @@ return {
 	{ "echasnovski/mini.surround", version = false, opts = {} },
 	{
 		"matteotagliatti/notes.nvim",
-		dir = "~/Dev/personal/notes.nvim",
-		dev = true,
+		-- dir = "~/Dev/personal/notes.nvim",
+		-- dev = true,
 		config = function()
 			require("notes").setup()
 		end,

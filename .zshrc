@@ -54,6 +54,11 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 source ~/Dev/personal/dotfiles/.config/zsh/work.zsh
 
+# Only on ubuntu
+if [[ "$(cat /etc/os-release | grep -i ubuntu)" ]]; then
+    alias cursor='nohup ~/Applications/cursor.AppImage --no-sandbox'
+fi
+
 export PATH="$HOME/.local/bin:$PATH" # Add user bin directory to PATH
 
 source ~/.fzf.zsh

@@ -61,7 +61,7 @@ fi
 
 # Only on Arch Linux
 if [[ "$(cat /etc/os-release | grep -i arch)" ]]; then
-    source ~/.config/zsh/arch.sh
+    source ~/.config/zsh/arch.zsh
 fi
 
 export PATH="$HOME/.local/bin:$PATH" # Add user bin directory to PATH

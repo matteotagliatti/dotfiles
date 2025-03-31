@@ -59,6 +59,11 @@ if [[ "$(cat /etc/os-release | grep -i ubuntu)" ]]; then
     alias cursor='nohup ~/Applications/cursor.AppImage --no-sandbox'
 fi
 
+# Only on Arch Linux
+if [[ "$(cat /etc/os-release | grep -i arch)" ]]; then
+    source ~/.config/zsh/arch.sh
+fi
+
 export PATH="$HOME/.local/bin:$PATH" # Add user bin directory to PATH
 
 source ~/.fzf.zsh

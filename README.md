@@ -2,18 +2,18 @@
 
 ## Install
 
-### Ubuntu
+### Ubuntu / Arch
 
 1. Make the setup script executable:
 
 ```bash
-chmod +x setup/ubuntu.sh
+chmod +x setup/[os].sh
 ```
 
 2. Run the setup script:
 
 ```bash
-./setup/ubuntu.sh
+./setup/[os].sh
 ```
 
 The setup script will:

@@ -29,7 +29,9 @@ sudo pacman -S --noconfirm \
     lazygit \
     docker \
     docker-compose \
-    ghostty
+    ghostty \
+    fd \
+    bat
 
 # Install AUR helper (yay)
 if ! command -v yay &> /dev/null; then

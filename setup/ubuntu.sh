@@ -23,7 +23,9 @@ sudo apt install -y \
     pkg-config \
     libssl-dev \
     stow \
-    ripgrep
+    ripgrep \
+    fd-find \
+    bat
 
 # Install fzf from git
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf

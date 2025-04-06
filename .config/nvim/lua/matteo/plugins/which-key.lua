@@ -16,11 +16,9 @@ return {
 		wk.add({
 			{ "<leader>d", group = "[D]iagnostics" },
 			{ "<leader>f", group = "[F]ind" },
-			{ "<leader>fs", group = "[F]ind [S]ymbols" },
 			{ "<leader>g", group = "[G]it" },
 			{ "<leader>t", group = "[T]rouble" },
 			{ "<leader>q", group = "[Q]uit" },
-			{ "<leader>n", group = "[N]otes" },
 		})
 	end,
 }

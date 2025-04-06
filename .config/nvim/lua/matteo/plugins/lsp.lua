@@ -68,7 +68,7 @@ return { -- LSP Configuration & Plugins
 		end
 
 		local servers = {
-			tsserver = {
+			ts_ls = {
 				commands = {
 					OrganizeImports = {
 						typescript_organize_imports,
@@ -79,7 +79,6 @@ return { -- LSP Configuration & Plugins
 			html = {},
 			cssls = {},
 			tailwindcss = {},
-			astro = {},
 			marksman = {},
 			lua_ls = {
 				settings = {

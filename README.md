@@ -1,38 +1,39 @@
 # Dotfiles
 
-## Install
+My personal dotfiles repository containing configurations for various development tools and system settings.
 
-### Ubuntu / Arch
+## 📦 Managing Dotfiles with Stow
 
-1. Make the setup script executable:
+This repository uses [GNU Stow](https://www.gnu.org/software/stow/) to manage dotfiles. Stow creates symlinks from your home directory to the files in this repository.
 
-```bash
-chmod +x setup/[os].sh
-```
+### Basic Usage
 
-2. Run the setup script:
+To stow all configurations:
 
 ```bash
-./setup/[os].sh
+stow -t $HOME .
 ```
 
-The setup script will:
+To stow specific configurations:
 
-- Create necessary directories
-- Install all required dependencies
-- Set up development tools (Node.js, Bun, etc.)
-- Install and configure tools
-- Install fonts
-- Stow all configuration files
+```bash
+stow -t $HOME nvim    # Stow only Neovim config
+stow -t $HOME zsh     # Stow only Zsh config
+```
 
-After the script completes:
+### Unstowing
 
-1. Log out and log back in to:
+To remove symlinks:
 
-   - Apply the shell change to zsh
-   - Activate Docker group membership (to use Docker without sudo)
+```bash
+stow -D -t $HOME .    # Remove all symlinks
+stow -D -t $HOME nvim # Remove only Neovim symlinks
+```
 
-2. After logging back in:
-   - Run `tmux source ~/.config/tmux/tmux.conf` to load tmux configuration
-   - Install your preferred Node.js version: `fnm install <version>`
-   - Open tmux and press `prefix + I` to install tmux plugins
+### Restowing
+
+To update symlinks after changes:
+
+```bash
+stow -R -t $HOME .    # Restow all configurations
+```

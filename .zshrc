@@ -54,9 +54,8 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 source ~/Dev/personal/dotfiles/.config/zsh/work.zsh
 
-# Only on ubuntu
-if [[ "$(cat /etc/os-release | grep -i ubuntu)" ]]; then
-    alias cursor='nohup ~/Applications/cursor.AppImage --no-sandbox'
+if [[ "$(cat /etc/os-release | grep -i ubuntu | grep -i arch)" ]]; then
+    alias cursor='~/Applications/cursor.AppImage --no-sandbox'
 fi
 
 # Only on Arch Linux

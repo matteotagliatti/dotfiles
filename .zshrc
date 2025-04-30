@@ -54,10 +54,6 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 source ~/Dev/personal/dotfiles/.config/zsh/work.zsh
 
-if [[ "$(cat /etc/os-release | grep -i ubuntu | grep -i arch)" ]]; then
-    alias cursor='~/Applications/cursor.AppImage --no-sandbox'
-fi
-
 # Only on Arch Linux
 if [[ "$(cat /etc/os-release | grep -i arch)" ]]; then
     source ~/.config/zsh/arch.zsh
@@ -89,11 +85,5 @@ esac
 [ -s "/home/matteo/.bun/_bun" ] && source "/home/matteo/.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-# cargo
-CARGO_PATH="$HOME/.cargo"
-if [ -d "$CARGO_PATH" ]; then
-  source "$CARGO_PATH/env"
-fi
 
 # zprof

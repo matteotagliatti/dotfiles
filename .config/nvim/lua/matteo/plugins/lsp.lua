@@ -68,7 +68,7 @@ return { -- LSP Configuration & Plugins
 		end
 
 		local servers = {
-			ts_ls = {
+			tsserver = {
 				commands = {
 					OrganizeImports = {
 						typescript_organize_imports,

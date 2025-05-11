@@ -20,8 +20,4 @@ return {
 		"rmagatti/auto-session",
 		opts = {},
 	},
-	{
-		"matteotagliatti/notes.nvim",
-		opts = {},
-	},
 }

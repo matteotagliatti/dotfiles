@@ -35,15 +35,11 @@ return {
 			-- Conform can also run multiple formatters sequentially
 			-- python = { "isort", "black" },
 			-- You can use 'stop_after_first' to run the first available formatter from the list
-			javascript = { "prettier", "biome", stop_after_first = true },
-			javascriptreact = { "prettier", "biome", stop_after_first = true },
-			typescript = { "prettier", "biome", stop_after_first = true },
-			typescriptreact = { "prettier", "biome", stop_after_first = true },
-			astro = { "prettier", "biome", stop_after_first = true },
-			html = { "prettier", "biome", stop_after_first = true },
-			css = { "prettier", "biome", stop_after_first = true },
-			json = { "prettier", "biome", stop_after_first = true },
-			markdown = { "prettier", "biome", stop_after_first = true },
+			javascript = { "prettier" },
+			javascriptreact = { "prettier" },
+			typescript = { "prettier" },
+			typescriptreact = { "prettier" },
+			markdown = { "prettier" },
 		},
 	},
 }

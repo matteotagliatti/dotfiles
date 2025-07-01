@@ -1,23 +1,42 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = {
+		"nvim-tree/nvim-web-devicons",
+		"letieu/harpoon-lualine",
+		{
+			"ThePrimeagen/harpoon",
+			branch = "harpoon2",
+		},
+	},
 	config = function()
 		local empty_extension = { sections = {}, filetypes = { "trouble" } }
 		require("lualine").setup({
 			options = {
 				theme = "catppuccin",
-				section_separators = { left = " ", right = "" },
+				separator = { left = "", right = "" },
 			},
 			sections = {
 				-- left
 				lualine_a = { "mode" },
 				lualine_b = { "branch", "diff", "diagnostics" },
-				lualine_c = { "buffers" },
+				lualine_c = {
+					"buffers",
+				},
 
 				-- right
-				lualine_x = { "filetype" },
-				lualine_y = { "progress" },
-				lualine_z = { "location" },
+				lualine_x = {
+					{
+						"harpoon2",
+						icon = "",
+						indicators = { "1", "2", "3", "4" },
+						active_indicators = { "1", "2", "3", "4" },
+						color_active = { fg = "#89b4fa" },
+						_separator = " ",
+						no_harpoon = "Harpoon not loaded",
+					},
+				},
+				lualine_y = { "filetype" },
+				lualine_z = { "progress" },
 			},
 			extensions = { empty_extension },
 		})

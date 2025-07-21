@@ -6,8 +6,6 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
-source ~/.config/zsh/catppuccin-mocha-zsh-syntax-highlighting.zsh
-
 autoload -U compinit; compinit
 
 # plugins
@@ -52,12 +50,9 @@ alias ll='ls -l --color'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-source ~/Dev/personal/dotfiles/.config/zsh/work.zsh
 
-# Only on Arch Linux
-if [[ "$(cat /etc/os-release | grep -i arch)" ]]; then
-    source ~/.config/zsh/arch.zsh
-fi
+alias nd4="NODE_OPTIONS='--max-old-space-size=4096' npm run dev"
+alias nd3="NODE_OPTIONS='--max-old-space-size=3072' npm run dev"
 
 export PATH="$HOME/.local/bin:$PATH" # Add user bin directory to PATH
 

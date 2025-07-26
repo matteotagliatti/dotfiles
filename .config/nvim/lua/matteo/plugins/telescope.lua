@@ -48,13 +48,19 @@ return {
 			keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
 			keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[F]ind Existing Buffers" })
 
-			-- Search in current buffer
 			keymap.set("n", "<leader>fi", function()
 				builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 					winblend = 10,
 					previewer = false,
 				}))
 			end, { desc = "[F]ind [I]n Current Buffer" })
+
+			vim.keymap.set("n", "<leader>fo", function()
+				builtin.live_grep({
+					grep_open_files = true,
+					prompt_title = "Live Grep in Open Files",
+				})
+			end, { desc = "[F]ind in [O]pen Files" })
 		end,
 	},
 }

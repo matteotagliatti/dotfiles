@@ -10,6 +10,15 @@ return {
 	},
 	config = function()
 		local empty_extension = { sections = {}, filetypes = { "trouble" } }
+
+		local function format_harpoon_filename(harpoon_entry)
+			local filename = vim.fn.fnamemodify(harpoon_entry.value, ":t")
+			if #filename > 12 then
+				return string.sub(filename, 1, 9) .. "..."
+			end
+			return filename
+		end
+
 		require("lualine").setup({
 			options = {
 				theme = "catppuccin",
@@ -28,8 +37,18 @@ return {
 					{
 						"harpoon2",
 						icon = "",
-						indicators = { "1", "2", "3", "4" },
-						active_indicators = { "1", "2", "3", "4" },
+						indicators = {
+							format_harpoon_filename,
+							format_harpoon_filename,
+							format_harpoon_filename,
+							format_harpoon_filename,
+						},
+						active_indicators = {
+							format_harpoon_filename,
+							format_harpoon_filename,
+							format_harpoon_filename,
+							format_harpoon_filename,
+						},
 						color_active = { fg = "#89b4fa" },
 						_separator = " ",
 						no_harpoon = "Harpoon not loaded",

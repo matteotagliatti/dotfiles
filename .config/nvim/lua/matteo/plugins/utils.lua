@@ -1,19 +1,6 @@
 return {
 	{
-		-- Auto close pairs of characters
-		"windwp/nvim-autopairs",
-		event = "InsertEnter",
-		opts = {},
-	},
-	{
-		-- Use treesitter to close and autorename HTML tags
-		"windwp/nvim-ts-autotag",
-		opts = {},
-	},
-	{
-		-- "gc" to comment visual regions/lines
-		"numToStr/Comment.nvim",
-		opts = {},
+		"NMAC427/guess-indent.nvim",
 	},
 	{
 		-- Auto save and restore session

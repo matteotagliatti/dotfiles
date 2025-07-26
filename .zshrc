@@ -52,7 +52,6 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 alias nd4="NODE_OPTIONS='--max-old-space-size=4096' npm run dev"
-alias nd3="NODE_OPTIONS='--max-old-space-size=3072' npm run dev"
 
 export PATH="$HOME/.local/bin:$PATH" # Add user bin directory to PATH
 
@@ -80,5 +79,11 @@ esac
 [ -s "/home/matteo/.bun/_bun" ] && source "/home/matteo/.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Go
+if command -v go >/dev/null 2>&1; then
+  export PATH="$PATH:/usr/local/go/bin"
+  export PATH="$HOME/go/bin:$PATH"
+fi
 
 # zprof

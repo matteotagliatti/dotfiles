@@ -81,9 +81,8 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Go
-if command -v go >/dev/null 2>&1; then
-  export PATH="$PATH:/usr/local/go/bin"
-  export PATH="$HOME/go/bin:$PATH"
-fi
+export PATH="$PATH:/usr/local/go/bin"
+export PATH="$HOME/go/bin:$PATH"
+
 
 # zprof

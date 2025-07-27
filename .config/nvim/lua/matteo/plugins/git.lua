@@ -6,6 +6,13 @@ return {
 			delay = 500,
 			virt_text_pos = "eol",
 		},
+		signs = {
+			add = { text = "+" },
+			change = { text = "~" },
+			delete = { text = "_" },
+			topdelete = { text = "‾" },
+			changedelete = { text = "~" },
+		},
 		on_attach = function(bufnr)
 			local gitsigns = require("gitsigns")
 

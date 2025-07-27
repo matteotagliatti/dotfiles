@@ -26,11 +26,8 @@ keymap.set("n", "<leader>qa", function()
 	end
 end, { desc = "Close all buffers except the current one" })
 
--- Diagnostic keymaps
-keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, { desc = "[D]iagnostic [P]revious message" })
-keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, { desc = "[D]iagnostic [N]ext message" })
-keymap.set("n", "<leader>de", vim.diagnostic.open_float, { desc = "[D]iagnostic [E]rror message" })
-keymap.set("n", "<leader>dq", vim.diagnostic.setloclist, { desc = "[D]iagnostic [Q]uickfix list" })
+-- Diagnostic
+keymap.set("n", "<leader>d", vim.diagnostic.setloclist, { desc = "[D]iagnostic [Q]uickfix list" })
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows

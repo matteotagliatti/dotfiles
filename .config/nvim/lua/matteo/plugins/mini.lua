@@ -16,6 +16,9 @@ return {
 		-- - sr)'  - [S]urround [R]eplace [)] [']
 		require("mini.surround").setup()
 
+		-- Go backward/forward to a certain target with [ and ]
+		require("mini.bracketed").setup()
+
 		-- Add comments
 		--
 		-- - gc   - Toggle comment (like `gcip` - comment inner paragraph) for both. Normal and Visual modes

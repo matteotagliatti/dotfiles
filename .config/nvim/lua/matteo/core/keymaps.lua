@@ -26,8 +26,9 @@ keymap.set("n", "<leader>qa", function()
 	end
 end, { desc = "Close all buffers except the current one" })
 
--- Diagnostic
-keymap.set("n", "<leader>d", vim.diagnostic.setloclist, { desc = "[D]iagnostic [Q]uickfix list" })
+-- Quicklist
+keymap.set("n", "<leader>l", ":copen<Return>", { desc = "Open Quick[l]ist" })
+keymap.set("n", "<leader>d", vim.diagnostic.setloclist, { desc = "Open Quicklist [D]iagnostic" })
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows

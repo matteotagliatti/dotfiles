@@ -25,7 +25,6 @@ return {
 	config = function()
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
-		local trouble = require("trouble.sources.telescope")
 
 		telescope.setup({
 			pickers = {
@@ -39,10 +38,6 @@ return {
 						["<Esc>"] = actions.close, -- close telescope
 						["<C-p>"] = actions.move_selection_previous, -- move to prev result
 						["<C-n>"] = actions.move_selection_next, -- move to next resul
-						["<C-t>"] = trouble.open, -- open trouble
-					},
-					n = {
-						["<C-t>"] = trouble.open, -- open trouble
 					},
 				},
 			},

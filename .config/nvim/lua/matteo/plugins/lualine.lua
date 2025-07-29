@@ -9,8 +9,6 @@ return {
 		},
 	},
 	config = function()
-		local empty_extension = { sections = {}, filetypes = { "trouble" } }
-
 		local function format_harpoon_filename(harpoon_entry)
 			local filename = vim.fn.fnamemodify(harpoon_entry.value, ":t")
 			if #filename > 12 then
@@ -58,7 +56,7 @@ return {
 				lualine_y = { "filetype" },
 				lualine_z = { "progress" },
 			},
-			extensions = { empty_extension },
+			extensions = {},
 		})
 	end,
 }

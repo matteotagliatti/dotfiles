@@ -5,13 +5,11 @@ return {
 	event = "BufReadPost",
 	opts = {
 		suggestion = {
-			enabled = true,
 			auto_trigger = true,
-			hide_during_completion = false,
 			keymap = {
-				accept = "<Tab>", -- handled by nvim-cmp / blink.cmp
-				next = "<C-n>",
-				prev = "<C-p>",
+				accept = false, -- handled by nvim-cmp / blink.cmp
+				next = "<C-]>",
+				prev = "<C-[>",
 			},
 		},
 		panel = { enabled = false },

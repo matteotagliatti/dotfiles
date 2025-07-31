@@ -26,8 +26,7 @@ keymap.set("n", "<leader>qa", function()
 	end
 end, { desc = "Close all buffers except the current one" })
 
--- Quicklist
-keymap.set("n", "<leader>l", ":copen<Return>", { desc = "Open Quick[l]ist" })
+-- Diagnostics
 keymap.set("n", "<leader>d", vim.diagnostic.setloclist, { desc = "Open Quicklist [D]iagnostic" })
 
 -- Keybinds to make split navigation easier.

@@ -38,6 +38,9 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # colorize completion li
 zstyle ':completion:*' menu no # no menu selection
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' # preview directory content
 
+# prompt
+PROMPT=$'➜ '
+
 # aliases
 alias v=nvim
 alias t=tmux
@@ -47,17 +50,15 @@ alias d=lazydocker
 alias e=exit
 alias ls='ls --color'
 alias ll='ls -l --color'
+alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-
-alias nd4="NODE_OPTIONS='--max-old-space-size=4096' npm run dev"
 
 export PATH="$HOME/.local/bin:$PATH" # Add user bin directory to PATH
 
 source ~/.fzf.zsh
 eval "$(zoxide init zsh)"
-eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/catpuccin.json)"
 
 ###
 

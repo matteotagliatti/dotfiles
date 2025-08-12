@@ -39,7 +39,7 @@ zstyle ':completion:*' menu no # no menu selection
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' # preview directory content
 
 # prompt
-PROMPT=$'➜ '
+PROMPT=$'\uf0a9 '
 
 # aliases
 alias v=nvim

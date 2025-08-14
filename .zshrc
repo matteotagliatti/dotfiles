@@ -41,6 +41,11 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' # preview dir
 # prompt
 PROMPT=$'\uf0a9 '
 
+# set terminal title to current directory
+precmd() {
+  print -Pn "\e]0;%~\a"
+}
+
 # aliases
 alias v=nvim
 alias t=tmux

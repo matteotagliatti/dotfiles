@@ -29,9 +29,6 @@ return {
 			},
 			opts = {},
 		},
-		{
-			"giuxtaposition/blink-cmp-copilot",
-		},
 	},
 	opts = {
 		keymap = {
@@ -73,7 +70,7 @@ return {
 		},
 
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer", "copilot" },
+			default = { "lsp", "path", "snippets", "buffer" },
 			providers = {
 				copilot = {
 					name = "copilot",

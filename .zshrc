@@ -38,13 +38,23 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # colorize completion li
 zstyle ':completion:*' menu no # no menu selection
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' # preview directory content
 
-# prompt
-PROMPT=$'\uf0a9 '
-
 # set terminal title to current directory
 precmd() {
   print -Pn "\e]0;%~\a"
 }
+
+# Git branch info
+git_branch() {
+  local branch
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+    branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
+    echo " %F{yellow}(%F{red}$branch%F{yellow})%f"
+  fi
+}
+
+# Custom prompt
+setopt PROMPT_SUBST # evaluate the prompt
+PROMPT=$'%F{blue}%1~%f$(git_branch) '
 
 # aliases
 alias v=nvim
@@ -89,6 +99,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # Go
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$HOME/go/bin:$PATH"
-
 
 # zprof

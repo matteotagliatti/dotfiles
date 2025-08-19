@@ -2,19 +2,12 @@ vim.g.mapleader = " " -- set leader key to space
 local keymap = vim.keymap
 
 keymap.set("i", "jj", "<ESC>", { desc = "Escape" })
-keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save" })
-keymap.set("i", "<C-s>", "<ESC>:w<CR>", { desc = "Save in insert mode" })
-keymap.set("n", "<C-q>", ":q<CR>", { desc = "Quit in normal mode" })
 keymap.set("n", "<Esc>", ":nohlsearch<CR>", { desc = "Remove search highlight" })
-keymap.set("n", "<leader>w", ":vsplit<Return>", { desc = "Vertical split window" })
-
-keymap.set("v", "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
-keymap.set("n", "<leader>p", [["+p]], { desc = "Paste from system clipboard" })
+keymap.set({ "n", "v" }, "Y", [["+y]], { desc = "Copy to system clipboard" })
 
 -- buffers
 keymap.set("n", "<tab>", ":bnext<Return>", { desc = "Go to next buffer" })
 keymap.set("n", "<s-tab>", ":bprev<Return>", { desc = "Go to previous buffer" })
-keymap.set("n", "<leader><tab>", "<C-^>", { desc = "Go to the previously opened buffer" })
 keymap.set("n", "<leader>qq", ":bdelete<Return>", { desc = "Delete buffer" })
 keymap.set("n", "<leader>q!", ":bdelete!<Return>", { desc = "Delete buffer without saving" })
 keymap.set("n", "<leader>qa", function()

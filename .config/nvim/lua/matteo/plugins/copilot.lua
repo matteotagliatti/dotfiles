@@ -7,7 +7,7 @@ return {
 		suggestion = {
 			auto_trigger = true,
 			keymap = {
-				accept = "<Tab>", -- handled by nvim-cmp / blink.cmp
+				accept = "<C-Tab>", -- handled by nvim-cmp / blink.cmp
 				next = "<C-]>",
 				prev = "<C-[>",
 			},

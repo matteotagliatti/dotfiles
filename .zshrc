@@ -45,10 +45,14 @@ precmd() {
 
 # Git branch info
 git_branch() {
-  local branch
+  local branch dirty
   if git rev-parse --git-dir > /dev/null 2>&1; then
     branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
-    echo " %F{yellow}(%F{red}$branch%F{yellow})%f"
+    # Check for uncommitted changes
+    if [[ -n $(git status --porcelain 2>/dev/null) ]]; then
+      dirty="%F{red}*%f"
+    fi
+    echo " %F{yellow}(%F{red}$branch$dirty%F{yellow})%f"
   fi
 }
 

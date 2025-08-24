@@ -17,9 +17,7 @@ return {
 			{ "<leader>f", group = "[F]ind" },
 			{ "<leader>g", group = "[G]it" },
 			{ "<leader>q", group = "[Q]uit buffer" },
-			{ "<leader>h", group = "[H]arpoon" },
 			{ "<leader>n", group = "[N]otes" },
-			{ "<leader>nj", group = "[N]otes [J]ournal" },
 		})
 	end,
 }

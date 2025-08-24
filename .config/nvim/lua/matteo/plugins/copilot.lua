@@ -7,13 +7,14 @@ return {
 		suggestion = {
 			auto_trigger = true,
 			keymap = {
-				accept = "<C-Tab>", -- handled by nvim-cmp / blink.cmp
+				accept = "<Tab>",
 				next = "<C-]>",
 				prev = "<C-[>",
 			},
 		},
 		panel = { enabled = false },
 		filetypes = {
+			markdown = true,
 			help = true,
 		},
 	},

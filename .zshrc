@@ -78,30 +78,13 @@ export PATH="$HOME/.local/bin:$PATH" # Add user bin directory to PATH
 
 source ~/.fzf.zsh
 eval "$(zoxide init zsh)"
+eval "$(mise activate zsh)"
 
 ###
-
-# fnm
-FNM_PATH="/home/matteo/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/matteo/.local/share/fnm:$PATH"
-  eval "`fnm env`"
-fi
-
-# pnpm
-export PNPM_HOME="/home/matteo/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
 
 # Bun
 [ -s "/home/matteo/.bun/_bun" ] && source "/home/matteo/.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-# Go
-export PATH="$PATH:/usr/local/go/bin"
-export PATH="$HOME/go/bin:$PATH"
 
 # zprof

@@ -4,6 +4,7 @@ local keymap = vim.keymap
 keymap.set("i", "jj", "<ESC>", { desc = "Escape" })
 keymap.set("n", "<Esc>", ":nohlsearch<CR>", { desc = "Remove search highlight" })
 keymap.set({ "n", "v" }, "Y", [["+y]], { desc = "Copy to system clipboard" })
+keymap.set({ "n", "v" }, "P", [["+p]], { desc = "Paste from system clipboard" })
 
 -- buffers
 keymap.set("n", "<tab>", ":bnext<Return>", { desc = "Go to next buffer" })

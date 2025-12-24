@@ -5,11 +5,6 @@ keymap.set("i", "jj", "<ESC>", { desc = "Escape" })
 keymap.set("n", "<Esc>", ":nohlsearch<CR>", { desc = "Remove search highlight" })
 keymap.set({ "n", "v" }, "Y", [["+y]], { desc = "Copy to system clipboard" })
 keymap.set({ "n", "v" }, "P", [["+p]], { desc = "Paste from system clipboard" })
-keymap.set("n", "<leader>N", function()
-	local root = vim.loop.cwd() or vim.fn.getcwd()
-	local note_path = root .. "/note.md"
-	vim.cmd.edit(vim.fn.fnameescape(note_path))
-end, { desc = "Open project note.md" })
 
 -- buffers
 keymap.set("n", "<tab>", ":bnext<Return>", { desc = "Go to next buffer" })

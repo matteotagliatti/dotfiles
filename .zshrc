@@ -1,5 +1,8 @@
 # zmodload zsh/zprof
 
+# Just source the Omarchy bash aliases, or copy them over
+source ~/.local/share/omarchy/default/bash/aliases
+
 # zinit init
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
@@ -67,16 +70,13 @@ alias ta='tmux attach'
 alias g=lazygit
 alias d=lazydocker
 alias e=exit
-alias ls='ls --color'
-alias ll='ls -l --color'
-alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
 export PATH="$HOME/.local/bin:$PATH" # Add user bin directory to PATH
 
-source ~/.fzf.zsh
+source <(fzf --zsh)
 eval "$(zoxide init zsh)"
 eval "$(mise activate zsh)"
 

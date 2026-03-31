@@ -74,6 +74,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
+export EDITOR="nvim"
 export PATH="$HOME/.local/bin:$PATH" # Add user bin directory to PATH
 
 source ~/.fzf.zsh
@@ -86,5 +87,8 @@ eval "$(mise activate zsh)"
 [ -s "/home/matteo/.bun/_bun" ] && source "/home/matteo/.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# opencode
+export PATH=/home/matteo/.opencode/bin:$PATH
 
 # zprof

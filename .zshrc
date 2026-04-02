@@ -77,7 +77,7 @@ alias ....='cd ../../..'
 export EDITOR="nvim"
 export PATH="$HOME/.local/bin:$PATH" # Add user bin directory to PATH
 
-source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(zoxide init zsh)"
 eval "$(mise activate zsh)"
 

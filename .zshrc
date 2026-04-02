@@ -69,7 +69,7 @@ alias d=lazydocker
 alias e=exit
 alias ls='ls --color'
 alias ll='ls -l --color'
-alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
+alias ff="fzf --preview 'batcat --style=numbers --color=always {}'"
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'

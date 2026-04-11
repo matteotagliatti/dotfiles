@@ -14,11 +14,12 @@ To stow all configurations:
 stow -t $HOME .
 ```
 
-To stow specific configurations:
+To stow specific configuration from dotfiles root:
 
 ```bash
-stow -t $HOME nvim    # Stow only Neovim config
-stow -t $HOME zsh     # Stow only Zsh config
+mkdir ~/.config/nvim
+cd .config
+stow -t $HOME/nvim nvim
 ```
 
 ### Unstowing
@@ -27,7 +28,7 @@ To remove symlinks:
 
 ```bash
 stow -D -t $HOME .    # Remove all symlinks
-stow -D -t $HOME nvim # Remove only Neovim symlinks
+stow -D -t $HOME/nvim nvim # Remove only Neovim symlink from inside .config
 ```
 
 ### Restowing

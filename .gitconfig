@@ -3,12 +3,10 @@
 [includeIf "gitdir:~/Dev/work/"]
   path = ~/Dev/personal/dotfiles/.config/git/.gitconfig_work
 
-[credential]
-  helper = store
-
 [pull]
   rebase = false
-
 [rerere]
   enabled = true
-
+[credential]
+	helper = !gh auth git-credential
+	helper = store # keep it last to work

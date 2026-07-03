@@ -82,6 +82,13 @@ eval "$(mise activate zsh)"
 
 ###
 
+# pnpm
+export PNPM_HOME="/home/matteo/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+
 # Bun
 [ -s "/home/matteo/.bun/_bun" ] && source "/home/matteo/.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"
@@ -91,3 +98,4 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH=/home/matteo/.opencode/bin:$PATH
 
 # zprof
+
